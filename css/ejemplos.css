@@ -43,6 +43,7 @@ header h2 a{
     text-decoration: none;
     display: inline-block;
     color:white;
+    border-radius:20px;
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
     border: 1px solid black;
