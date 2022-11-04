@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/javascript_icon_130900.png">
+    <link rel="stylesheet" href="css/palabra.css">
+    <script src="/js/index.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <title>Busca Palabra</title>
+    <script>
+        $(document).ready(function(){
+            $("#formulario").submit((event)=>{
+                event.preventDefault();
+                buscapalabra();
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Busca una Palabra en otra!!!</h1>
+    <section class="centrar">
+        <form id="formulario">
+            <label for="string1">Ingrese la primera palabra</label>
+            <input type="text" name="string1" id="string1" placeholder="Primera Palabra" class="palabra" required>
+            <br><br>
+            <label for="string2">Ingrese la segunda palabra</label>
+            <input type="text" name="string2" id="string2" placeholder="Segunda Palabra" class="palabra" required>
+            <br><br>
+            <label for="result">Resultado</label>
+            <input type="text" name="result" id="result" placeholder="Resultado de la busqueda" class="palabra" disabled>
+            <br><br>
+            <button class="enviar" id="enviar">Buscar</button>
+        </form> 
+       
+    </section>
+</body>
+</html>
