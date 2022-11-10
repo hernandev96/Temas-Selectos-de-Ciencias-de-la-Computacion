@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/javascript_icon_130900.png">
+    <link rel="stylesheet" href="css/palabra.css">
+    <script src="/js/index.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <title>Busca Palabra</title>
+    <script>
+        $(document).ready(function(){
+            $("#formulario").submit((event)=>{
+                event.preventDefault();
+                buscapalabra();
+            });
+            $("#borrar").click(()=>{
+                document.getElementById("string1").value="";
+                document.getElementById("string2").value="";
+                document.getElementById("result").value="";
+            });
+        });
+        function buscapalabra(){
+            var string1=document.getElementById("string1").value;
+            var string2=document.getElementById("string2").value;
+            var aux="";
+            var i;
+            var j;
+            console.log(string1);
+            console.log(string2);
+            for(i=0;i<string1.length;i++){
+                console.log("Entro en el primer for");
+                for( j=0;j<string2.length;j++){
+                    console.log("   Entro en el segundo for:");
+                    if(string2[j]==string1[i]){
+                        console.log("       Entre en el if");
+                        aux=aux+string2[j];
+                        break;
+                    }
+                }
+            }
+            console.log("La palabra aux esta:"+aux);
+            if(aux==string1){
+                document.getElementById("result").value=aux;
+            }else{
+                document.getElementById("result").value="No se pudo encontrar la primera palabra en la segunda";
+            }
+            
+        }
+        
+    </script>
+</head>
+<body>
+    <h1>Busca una Palabra en otra!!!</h1>
+    <section class="centrar">
+        <form id="formulario">
+            <label for="string1">Ingrese la primera palabra</label>
+            <input type="text" name="string1" id="string1" placeholder="Primera Palabra" class="palabra" required autocomplete="off">
+            <br><br>
+            <label for="string2">Ingrese la segunda palabra</label>
+            <input type="text" name="string2" id="string2" placeholder="Segunda Palabra" class="palabra" required autocomplete="off">
+            <br><br>
+            <label for="result">Resultado</label>
+            <input type="text" name="result" id="result" placeholder="Resultado de la busqueda" class="palabra" autocomplete="off" disabled>
+            <br><br>
+            <button class="enviar" id="enviar">Buscar</button>
+        </form> 
+        <button class="borrar" id="borrar">Borrar</button>
+    </section>
+</body>
+</html>

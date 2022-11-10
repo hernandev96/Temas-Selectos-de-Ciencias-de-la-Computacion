@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 500px;
+            margin: auto;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        ul{
+            list-style: none;
+
+        }
+        li{
+            background-color: black;
+            color: white;
+            padding: 10px 15px;
+        }
+        li:hover{
+            background-color:#434343;
+        }
+        .nav{
+            display:flex;
+            float: left;
+        }
+        ul li ul{
+            display: none;
+            position: absolute;
+            min-width: 140px;
+        }
+        li:hover > ul{
+            display:block;
+        }
+        ul li ul li{
+            position: relative;
+        }
+        ul li ul li ul{
+            left: 140px;
+            top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul class="nav">
+            <li>Inicio</li>
+            <li>Servicio
+                <ul>
+                    <li>Submenu 1</li>
+                    <li>Submenu 2</li>
+                    <li>Submenu 3
+                        <ul>
+                            <li>Submenu 1</li>
+                            <li>Submenu 2</li>
+                            <li>Submenu 3</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Acerca de 
+                <ul>
+                    <li>Submenu 1</li>
+                    <li>Submenu 2</li>
+                    <li>Submenu 3</li>
+                </ul>
+            </li>
+            <li>Contacto</li>
+        </ul>
+    </div>
+</body>
+</html>

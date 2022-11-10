@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serie de Taylor.</title>
+</head>
+<body>
+    <script>
+        x=prompt("Dame el valor de x:");
+        n=prompt("Ingresa un numero n para la precision:");
+
+        var res=0.0;
+
+        r=taylor(x,n);
+        alert("e a la x con precision n es:"+r);
+
+        function factorial(n){
+            (n==0 || n==1) && (fact=1);
+            (n>1)&& (fact=n*factorial(n-1));
+            return fact;
+        }
+        function potencia(a,b){
+            (b==0)&&(res=1);
+            (b==1)&&(res=a);
+            (b>1)&&(res=a*potencia(a,b-1));
+            return res;
+        }
+        function taylor(x,n){
+            (n==0)&&(res=potencia(x,0)/(factorial(0)));
+            (n>0)&&(res=(potencia(x,n)/factorial(n))+taylor(x,n-1));
+            return res;
+
+        }
+
+    </script>
+</body>
+</html>

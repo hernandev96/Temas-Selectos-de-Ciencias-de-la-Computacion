@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 3</title>
+</head>
+<body>
+    <p></p>
+    <script>
+        op1=prompt("Ingresa un numero:");
+        op2=prompt("Ingresa un numero:");
+        console.log("Operadores:"+op1+","+op2);
+
+        intop1=parseInt(op1);
+        intop2=parseInt(op2);
+
+        r=resta(intop1,intop2);
+        console.log("Resultado resta="+r);
+        suma(intop1,intop2);
+        suma("4","6");
+        suma(3,4,5);
+
+        multiplicacion();
+        multiplicacion(3,4);
+
+        function resta(a,b){
+            return a-b;
+        }
+
+        function suma(){
+            console.log("Argumentos: "+arguments.length);
+            console.log("Argumento 1:" +arguments[0]);
+            console.log("Argumento 2:" +arguments[1]);
+            console.log("Argumento 3:" +arguments[2]);
+
+            console.log("Resultado suma:"+(arguments[0]+arguments[1]));
+        }
+
+        function multiplicacion(a=5,b=20){
+           console.log("Multipliaciones:"+(a*b));
+        }
+
+    </script>
+</body>
+</html>
