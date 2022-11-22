@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <script>
+        var contacto;
+        function Contacto(nombre,fecha,correo){
+            this.nombre=nombre;
+            this.fecha=fecha;
+            this.correo=correo;
+
+            this.getNombre=function(){
+                return this.nombre;
+            };
+            this.getFecha=function(){
+                return this.fecha;
+            };
+            this.getCorreo=function(){
+                return this.correo;
+            };
+            this.setNombre=function(nombre){
+                this.nombre=nombre;
+            }
+            this.setFecha=function(fecha){
+                this.fecha=fecha;
+            }
+            this.setCorreo=function(correo){
+                this.correo=corre;
+            }
+        }
+        function getDatos(){
+            let form=document.getElementById("info");
+            contacto=new Contacto(form[0].value,form[1].value,form[2].value);
+
+            console.log(contacto.getNombre());
+            console.log(contacto.getCorreo());
+            console.log(contacto.getFecha());
+            console.log(contacto);
+        }
+    </script>
+    <form action="javascript:getDatos()" id="info">
+        Nombre:
+        <input type="text" name="cajas" placeholder="p.e juan lopez" id="input-nombre" required><br>
+        Fecha de Nacimiento:
+        <input type="date" name="cajas" placeholder="Año-Mes-Dia" id="input-fecha" required><br>
+        Correo:
+        <input type="email" name="cajas" placeholder="juan@gmail.com" id="input-correo" required><br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

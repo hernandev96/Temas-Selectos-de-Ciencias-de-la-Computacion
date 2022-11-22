@@ -1,0 +1,82 @@
+@font-face {
+    font-family: "nes";
+    src: url("../../fonts/nes.ttf") format("truetype");
+   
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'nes', Times, serif;
+    font-size: 20px;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    background-image: url("../../images/javascript.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    backdrop-filter: blur(15px);
+}
+.cabecera{
+    width: 100%;
+    height: 100px;
+   
+}
+.cabecera h1{
+    color: white;
+    text-align: center;
+    
+}
+
+button {
+    font-size:15px;
+}
+
+.pantalla-nes{
+    width: 1000px;
+    height: 550px;
+    position: absolute;
+    border-radius: 20px;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    background-image: url("https://media0.giphy.com/media/1Aj4GdLC0amFRv10VT/200w.webp?cid=ecf05e4747c35cjushmyvkvi7edg7mses479quqnhbfcqnlz&rid=200w.webp&ct=g");
+    background-repeat: no-repeat;    
+    background-size:1000px 550px ;   
+}
+.pantalla-nes h1{
+    color: white;
+    text-align: center;
+}
+
+.contenedor-nes{
+    flex-wrap: wrap;
+    display:flex;
+    justify-content: flex-start;
+    
+
+}
+.link-nes{
+    display: inline-block;
+    font-size: 15px;
+    margin-left: 15px;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #0f0c29;
+    height: 70px;
+    width: 250px;
+}
+.link-nes:hover{
+    text-decoration: none;
+    color:white;
+}
+
+

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <p>Hola Mundo</p>
+    <div id="main">
+        <p>El DOM es muy util</p>
+        <p>Demuestra el elemento<b>getElementsByTagName</b></p>
+    </div>    
+    <p id="demo"></p>
+    <script>
+        var x=document.getElementById("main");
+        var y=document.getElementsByTagName("p");
+        document.getElementById("demo").innerHTML="El primer parrafo index 0 dentro del div-main es: "+y[0].innerHTML;
+    </script>
+</body>
+</html>

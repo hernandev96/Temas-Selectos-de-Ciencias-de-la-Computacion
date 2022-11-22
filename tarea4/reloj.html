@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj Digital</title>
+    <link rel="stylesheet" href="css/reloj.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    
+    
+</head>
+<body>
+    <div class="marco">
+        <div class="pantalla">
+            <p class="fecha" id="date"> </p>
+            <div class="hora">
+                <p id="hora" class="numero"></p>
+                <p class="dot">:</p>
+                <p id="minuto" class="numero"></p>
+                <p class="dot">:</p>
+                <p id="segundo" class="numero"></p>
+                <p  id="meridiano" class="tiempo"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        
+        var meses=["","Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre",
+                "Noviembre","Diciembre"];
+        var dias=["","Lunes","Martes"+"Miercoles"+"Jueves"+"Viernes","Sabado","Domingo"];
+        var fecha=new Date();
+        var mes=meses[fecha.getMonth()];
+        var dia=fecha.getDate();
+        var year=fecha.getFullYear();
+        var day=dias[fecha.getDay()];
+        var string_fecha=day+" "+dia+" de "+mes+" de "+year;
+        console.log(string_fecha);
+        document.getElementById("date").innerHTML=string_fecha;
+
+        var hora=parseInt(fecha.getHours());
+        var minuto=parseInt(fecha.getMinutes());
+        var segundo=parseInt(fecha.getSeconds());
+        var meridiano="AM";
+        if(hora>12){
+            meridiano="PM"
+            hora=hora%12;
+        }
+        console.log(hora+":"+minuto+":"+segundo);
+        if(hora<10){
+                document.getElementById("hora").innerHTML="0"+hora;
+            }else{
+                document.getElementById("hora").innerHTML=hora;
+            }
+            if(minuto<10){
+                document.getElementById("minuto").innerHTML="0"+minuto;
+            }else{
+                document.getElementById("minuto").innerHTML=minuto;
+            }
+            if(segundo<10){
+                document.getElementById("segundo").innerHTML="0"+segundo;
+            }else{
+                document.getElementById("segundo").innerHTML=segundo;
+            }           
+            document.getElementById("meridiano").innerHTML=meridiano;
+
+        function cambia_hora(){
+            var aumentar_hora=false;
+            console.log(hora+":"+minuto+":"+segundo);
+            if(segundo==59){
+                segundo=0;
+                minuto++;
+            }else{
+                segundo++;
+            }
+            if(minuto==60){
+                minuto=0;
+                aumentar_hora=true;
+            }
+            console.log(hora+":"+minuto+":"+segundo);
+            console.log(aumentar_hora);
+            if(aumentar_hora){
+                hora++;
+                if(meridiano=="PM" && (hora%12)==0){
+                    meridiano="AM";
+                    hora=hora%12;
+                }
+                if(meridiano=="AM" && (hora%12)==0){
+                    meridiano="PM";
+                }
+                else{
+                    hora=hora%12;
+
+                }
+                aumentar_hora=false;
+            }else{
+                if(meridiano=="PM" && (hora%12)==0){
+                    meridiano="AM";
+                    hora=hora%12;
+                }
+                if(meridiano=="AM" && (hora%12)==0){
+                    meridiano="PM";
+                    hora=hora%12;
+                }
+                else{
+                    hora=hora%12;
+
+                }
+                
+            }
+            if(hora<10){
+                document.getElementById("hora").innerHTML="0"+hora;
+            }else{
+                document.getElementById("hora").innerHTML=hora;
+            }
+            if(minuto<10){
+                document.getElementById("minuto").innerHTML="0"+minuto;
+            }else{
+                document.getElementById("minuto").innerHTML=minuto;
+            }
+            if(segundo<10){
+                document.getElementById("segundo").innerHTML="0"+segundo;
+            }else{
+                document.getElementById("segundo").innerHTML=segundo;
+            }           
+            document.getElementById("meridiano").innerHTML=meridiano;
+            
+
+        }
+        setInterval(cambia_hora,1000);
+
+    
+</script>
+</body>
+</html>
