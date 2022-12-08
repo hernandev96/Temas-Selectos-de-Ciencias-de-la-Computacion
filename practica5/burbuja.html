@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>Burbuja</title>
+<meta charset="iso-8859-1" name="viewport" content="width=device-width" />
+<style>
+   body {
+      margin: 0;
+      padding: 0;  
+      overflow-x:hidden;
+      overflow-y:hidden;
+      align-items: center;
+      position: relative;
+   }
+   .contador{
+      width:200px;
+      height: 100px;
+      position: absolute;
+      background: none;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+   }
+   .contador p{
+      text-align: center;
+   }
+   
+</style>
+<script src="js/LinkedList.js"> </script>
+
+</head>
+<body>
+<canvas id="canvas">
+El navegador no soporta la etiqueta canvas de HTML 5
+</canvas>
+<div class="contador">
+   <p><strong>Burbujas explotadas</strong></p>
+   <p id="contador"></p>
+</div>
+<script src="js/Burbujas.js"> </script>
+   
+</body>
+</html>
+
